@@ -58,6 +58,12 @@
         button:hover {
             background-color: #2980b9;
         }
+        .button-secondary {
+            background-color: #7f8c8d;
+        }
+        .button-secondary:hover {
+            background-color: #95a5a6;
+        }
         .question-block {
             margin-bottom: 20px;
             padding-bottom: 15px;
@@ -146,7 +152,8 @@
         
         <div id="review-section"></div>
         
-        <button onclick="location.reload()">Take Another Test</button>
+        <button onclick="rerunQuiz()">Rerun Same Questions</button>
+        <button onclick="location.reload()" class="button-secondary">Take Another Random Test</button>
     </div>
 </div>
 
@@ -172,9 +179,19 @@
         document.getElementById('setup-section').classList.add('hidden');
         document.getElementById('quiz-section').classList.remove('hidden');
 
+        // Pick new random questions
         let shuffledBank = [...questionBank].sort(() => 0.5 - Math.random());
         currentQuestions = shuffledBank.slice(0, numQuestions);
 
+        renderQuiz();
+    }
+
+    function rerunQuiz() {
+        // Hide result section, show quiz section again
+        document.getElementById('result-section').classList.add('hidden');
+        document.getElementById('quiz-section').classList.remove('hidden');
+
+        // Render the exact same currentQuestions array without shuffling it
         renderQuiz();
     }
 
@@ -253,11 +270,9 @@
             reviewContainer.insertBefore(reviewHeader, reviewContainer.firstChild);
         }
 
-        // Target the single result element
         const resultText = document.getElementById('result-text');
         resultText.innerText = `You scored ${score} out of ${currentQuestions.length} (${percentage}%)`;
 
-        // Dynamically add the correct color class based on the 75% score cutoff
         if (percentage < 75) {
             resultText.className = 'result-text result-failed';
         } else {
