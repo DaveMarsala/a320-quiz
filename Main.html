@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Quiz</title>
+    <style>
+        /* CSS for Styling and Responsiveness */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .setup-section, .quiz-section, .result-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .question-block {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .option-label {
+            display: block;
+            background: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+        }
+        .option-label:hover {
+            background: #eef2f5;
+        }
+        
+        /* Base styling for results text */
+        .result-text {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0 20px 0;
+        }
+
+        /* Color modifiers applied by JavaScript */
+        .result-passed {
+            color: #27ae60; /* Green */
+        }
+
+        .result-failed {
+            color: #e74c3c; /* Red */
+        }
+        
+        /* NEW STYLES FOR REVIEW SECTION */
+        .review-block {
+            background: #fff3f3;
+            border-left: 5px solid #e74c3c;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .wrong-answer {
+            color: #c0392b;
+            text-decoration: line-through;
+            margin-top: 8px;
+            font-size: 15px;
+        }
+        .correct-answer {
+            color: #27ae60;
+            font-weight: bold;
+            background: #e8f8f5;
+            padding: 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="setup-section" class="setup-section">
+        <h1>Aviation Knowledge Test</h1>
+        <label for="num-questions">How many questions would you like to answer?</label>
+        <input type="number" id="num-questions" min="1" value="3">
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div id="quiz-section" class="quiz-section hidden">
+        <div id="quiz-container"></div>
+        <button onclick="submitQuiz()">Submit Answers</button>
+    </div>
+
+    <div id="result-section" class="result-section hidden">
+        <h2>Quiz Complete!</h2>
+        
+        <div id="result-text" class="result-text"></div>
+        
+        <div id="review-section"></div>
+        
+        <button onclick="location.reload()">Take Another Test</button>
+    </div>
+</div>
+
+<script src="questions.js"></script>
+
+<script>
+    let currentQuestions = [];
+
+    function startQuiz() {
+        if (typeof questionBank === 'undefined') {
+            alert("🚨 Error: 'questions.js' could not be loaded!\n\nPossible reasons:\n1. The file 'questions.js' is not in the exact same folder as 'index.html'.\n2. The file is secretly named 'questions.js.txt'.\n3. You opened the file inside a ZIP folder without extracting it first.");
+            return;
+        }
+
+        const numInput = document.getElementById('num-questions').value;
+        let numQuestions = parseInt(numInput, 10);
+
+        if (numQuestions < 1 || numQuestions > questionBank.length) {
+            alert("Please enter a valid number between 1 and " + questionBank.length);
+            return;
+        }
+
+        document.getElementById('setup-section').classList.add('hidden');
+        document.getElementById('quiz-section').classList.remove('hidden');
+
+        let shuffledBank = [...questionBank].sort(() => 0.5 - Math.random());
+        currentQuestions = shuffledBank.slice(0, numQuestions);
+
+        renderQuiz();
+    }
+
+    function renderQuiz() {
+        const container = document.getElementById('quiz-container');
+        container.innerHTML = '';
+
+        currentQuestions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question-block';
+            
+            const questionTitle = document.createElement('div');
+            questionTitle.className = 'question-text';
+            questionTitle.innerText = `${index + 1}. ${q.question}`;
+            questionDiv.appendChild(questionTitle);
+
+            q.options.forEach(option => {
+                const label = document.createElement('label');
+                label.className = 'option-label';
+                
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = `question_${index}`;
+                radio.value = option;
+
+                label.appendChild(radio);
+                label.appendChild(document.createTextNode(' ' + option));
+                questionDiv.appendChild(label);
+            });
+
+            container.appendChild(questionDiv);
+        });
+    }
+
+    function submitQuiz() {
+        let score = 0;
+        const reviewContainer = document.getElementById('review-section');
+        reviewContainer.innerHTML = ''; 
+        let hasMistakes = false;
+
+        currentQuestions.forEach((q, index) => {
+            const selectedOption = document.querySelector(`input[name="question_${index}"]:checked`);
+            const userAnswer = selectedOption ? selectedOption.value : null;
+
+            if (userAnswer === q.answer) {
+                score++;
+            } else {
+                hasMistakes = true;
+                
+                const reviewDiv = document.createElement('div');
+                reviewDiv.className = 'review-block';
+                
+                let html = `<div class="question-text">${index + 1}. ${q.question}</div>`;
+                
+                if (userAnswer) {
+                    html += `<div class="wrong-answer">Your Answer: ${userAnswer}</div>`;
+                } else {
+                    html += `<div class="wrong-answer">You didn't select an answer.</div>`;
+                }
+                
+                html += `<div class="correct-answer">Correct Answer: ${q.answer}</div>`;
+                
+                reviewDiv.innerHTML = html;
+                reviewContainer.appendChild(reviewDiv);
+            }
+        });
+
+        const percentage = Math.round((score / currentQuestions.length) * 100);
+
+        document.getElementById('quiz-section').classList.add('hidden');
+        document.getElementById('result-section').classList.remove('hidden');
+
+        if (hasMistakes) {
+            const reviewHeader = document.createElement('h3');
+            reviewHeader.innerText = "Questions to Review:";
+            reviewContainer.insertBefore(reviewHeader, reviewContainer.firstChild);
+        }
+
+        // Target the single result element
+        const resultText = document.getElementById('result-text');
+        resultText.innerText = `You scored ${score} out of ${currentQuestions.length} (${percentage}%)`;
+
+        // Dynamically add the correct color class based on the 75% score cutoff
+        if (percentage < 75) {
+            resultText.className = 'result-text result-failed';
+        } else {
+            resultText.className = 'result-text result-passed';
+        }
+    }
+</script>
+
+</body>
+</html>
