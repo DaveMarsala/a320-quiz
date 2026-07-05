@@ -6,7 +6,7 @@ const questionBank = [
             "The active Cabin Pressure Controller",
             "The pilot using the DITCHING pb"
         ],
-        answer: "The active Cabin Pressure Controller"
+        answer: "The pilot using the MAN V/S CTL switch"
     },
     {
         question: "The forward cargo ventilation system includes two isolation valves that:",
