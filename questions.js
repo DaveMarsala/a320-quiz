@@ -766,5 +766,339 @@ const questionBank = [
             "The Blue system shuts down (unpressurized)"
         ],
         answer: "The Blue system shuts down (unpressurized)"
-    }
+    },
+    {
+        question: "Which of the following criteria is true for inhibiting the PTU between engine starts?",
+        options: [
+            "On the ground with staggered ENG MASTER switches and nosewheel steering connectec",
+            "On the ground with staggered ENG MASTER switches), parking brake off and nosewheel steering connected",
+            "On the ground with staggered ENG MASTER switches, parking brake on or nosewheel steering disconnected"
+        ],
+        answer: "On the ground with staggered ENG MASTER switches, parking brake on or nosewheel steering disconnected"
+    },
+    {
+        question: "Which hydraulic system provides pressure for braking under normal conditions?",
+        options: [
+            "YELLOW",
+            "BLUE",
+            "GREEN"
+        ],
+        answer: "GREEN"
+    },
+    {
+        question: "Engine anti-ice is applied to what component of the engine?",
+        options: [
+            "The nacelle leading edges",
+            "The spinner and nacelle leading edges",
+            "The fan and nacelle leading edges"
+        ],
+        answer: "The nacelle leading edges"
+    },
+    {
+        question: "What is the airspeed limit for operation of the windscreen wipers?",
+        options: [
+            "230 knots",
+            "250 knots",
+            "200 knots"
+        ],
+        answer: "230 knots"
+    },
+    {
+        question: "If electrical power supply to the wing anti-ice valve fails, the wing anti-ice valve:",
+        options: [
+            "Closes",
+            "Opens",
+            "Remains in its current position"
+        ],
+        answer: "Closes"
+    },
+    {
+        question: "The wing anti-ice system provides:",
+        options: [
+            "Anti-icing capability for only the outboard leading edge devices of each wing",
+            "Anti-icing capability for all leading edge devices of each wing",
+            "Anti-icing capability for all leading edge and trailing edge"
+        ],
+        answer: "Anti-icing capability for only the outboard leading edge devices of each wing devices of each wing"
+    },
+    {
+        question: "Which hydraulic system does the Landing Gear Control and Interface Unit (LGIU) use to extend and retract the landing gear?",
+        options: [
+            "GREEN",
+            "YELLOW",
+            "BLUE"
+        ],
+        answer: "GREEN"
+    },
+    {
+        question: "When does the alternate braking system become operational/active?",
+        options: [
+            "The failure of the Alternate Brake Control Unit (ABCU)",
+            "The failure of the autobrakes",
+            "The failure of the green hydraulic system"
+        ],
+        answer: "The failure of the green hydraulic system"
+    },
+    {
+        question: "If selected ON, which exterior lights automatically extinguish with the landing gear retracted?",
+        options: [
+            "Nose lights (taxi and takeoff)",
+            "Landing lights",
+            "Wing lights"
+        ],
+        answer: "Nose lights (taxi and takeoff)"
+    },
+    {
+        question: "The emergency lights can be activated from the flight attendant station:",
+        options: [
+            "Only if the EMER LT switch on the overhead SIGNS panel is in the ARM position",
+            "Only if the EMER LT switch on the overhead SIGNS panel is in the OFF position",
+            "Regardless of which position the EMER LT switch on the overhead SIGNS panel"
+        ],
+        answer: "Regardless of which position the EMER LT switch on the overhead SIGNS panel"
+    },
+    {
+        question: "The cabin oxygen masks automatically deploy (\"drop\"when the cabin altitude exceeds:",
+        options: [
+            "10,000 feet",
+            "12,500 feet",
+            "14,000 feet"
+        ],
+        answer: "14,000 feet"
+    },
+    {
+        question: "Which of the following statements best describe the use of engine bleed air",
+        options: [
+            "The Bleed Monitoring Computers (BMCs) open the HP valve when IP air is insufficient to meet system demand. HP air replaces IP air as the source of bleed air.",
+            "the BMCs use HP air to augment IP air when necessary. HP and IP bleed air are used simultaneously during high demand",
+            "The BMCs only open the HP valve during ground operations"
+        ],
+        answer: "The Bleed Monitoring Computers (BMCs) open the HP valve when IP air is insufficient to meet system demand. HP air replaces IP air as the source of bleed air."
+    },
+    {
+        question: "If engine 1 bleed valve fails in the closed position, engine anti-ice is:",
+        options: [
+            "Provided through electric heating",
+            "Unavailable to that engine",
+            "Unaffected since engine anti-ice is provided by hot bleed air supply that is independent of the pneumatic system"
+        ],
+        answer: "Unaffected since engine anti-ice is provided by hot bleed air supply that is independent of the pneumatic system"
+    },
+    {
+        question: "If the engines and APU are running with the APU bleed valve open, the BMCs:",
+        options: [
+            "Close the engine bleed valves giving priority to APU bleed air",
+            "Close the APU bleed valve and opens the engine bleec valves giving priority to engine bleed air",
+            "Open the engine bleed valves and allow the engine and APU bleed air to pressurize the pneumatic system simultaneously"
+        ],
+        answer: "Close the engine bleed valves giving priority to APU bleed air"
+    },
+    {
+        question: "All of the following are required to start the APU except:",
+        options: [
+            "BAT pbs selected to AUTO",
+            "APU MASTER and START switches to ON",
+            "EXT PWR pb selected to ON"
+        ],
+        answer: "EXT PWR pb selected to ON"
+    },
+    {
+        question: "APU bleed air may be used for all of the following except:",
+        options: [
+            "Engine starting",
+            "Pack operation",
+            "Wing ant-ice"
+        ],
+        answer: "Wing ant-ice"
+    },
+    {
+        question: "Which of the following is true concerning FADEC?",
+        options: [
+            "Potects the engine from exceeding EGT limits during automatic starts on the ground only",
+            "Protects the engine from exceeding EGT limits during all automatic starts",
+            "Protects the engine from exceeding EGT limits during all automatic and manual engine starts"
+        ],
+        answer: "Potects the engine from exceeding EGT limits during automatic starts on the ground only"
+    },
+    {
+        question: "If the ENG MODE selector is moved to the CRANK position:",
+        options: [
+            "The engine will motor when the overhead ENG MAN START pb is selected ON",
+            "Fuel and ignition are inhibited",
+            "The engine will begin to motor immediately with fuel and ignition inhibited"
+        ],
+        answer: "The engine will motor when the overhead ENG MAN START pb is selected ON"
+    },
+    {
+        question: "Which of the following is true?",
+        options: [
+            "FADEC will only prevent the engine from exceeding RPM limits in reverse thrust",
+            "FADEC will always prevent the engine from exceeding RPM limits and EGT limits",
+            "FADEC will prevent the engine from exceeding RPM limits in both forward and reverse thrust"
+        ],
+        answer: "FADEC will prevent the engine from exceeding RPM limits in both forward and reverse thrust"
+    },
+    {
+        question: "On the ground with an engine shut down, can the pilot deploy that engine's thrust reverser blocker doors and translating sleeve from the cockpit?",
+        options: [
+            "Yes, as long as the YELLOW hydraulic system is pressurized",
+            "Yes, as long as GREEN hydraulic system is pressurized",
+            "No, the blocker doors and translating sleeve cannot be deployed on an inoperative engine from the cockpit"
+        ],
+        answer: "No, the blocker doors and translating sleeve cannot be deployed on an inoperative engine from the cockpit"
+    },
+    {
+        question: "If Cabin Pressure Controller 1 fails, what occurs automatically provided no other abnormals are present?",
+        options: [
+            "The manual mode activates",
+            "Cabin Pressure Controller 2 activates",
+            "The outflow valve drives full open"
+        ],
+        answer: "Cabin Pressure Controller 2 activates"
+    },
+    {
+        question: "If the LDG ELEV selector is in the AUTO position, the active Cabin Pressure Controller receives destination field elevation from what source?",
+        options: [
+            "ADIRS",
+            "FMS",
+            "ACARS"
+        ],
+        answer: "FMS"
+    },
+    {
+        question: "A return to the departure airport is required immediately after takeoff. Which statement is true regarding automatic pressurization?",
+        options: [
+            "The pilot must select the manual mode (MODE SEL pb to MAN)",
+            "The active pressure controller automatically returns the cabin altitude to departure field elevation",
+            "The outflow valve remains in its last position"
+        ],
+        answer: "The active pressure controller automatically returns the cabin altitude to departure field elevation"
+    },
+    {
+        question: "Which of the following statements best describes the function of the safety valves?",
+        options: [
+            "They prevent excessive positive differential pressure only",
+            "They prevent excessive positive or negative differential pressure",
+            "They prevent excessive negative differential pressure only"
+        ],
+        answer: "They prevent excessive positive or negative differential pressure"
+    },
+    {
+        question: "An emergency call from the cabin results in the flashing of what ACP legend?",
+        options: [
+            "MECH",
+            "ATT",
+            "CALL"
+        ],
+        answer: "ATT"
+    },
+    {
+        question: "Which of the following statements regarding the emergency electrical configuration is true?",
+        options: [
+            "The emergency generator provides only emergency DC power",
+            "The RAT automatically extends and the emergency generator connects if AC BUS 1 and AC BUS 2 are unpowered in-flight",
+            "The RAT must be manually extended using the RAT MAN ON pb if AC BUS 1 and AC BUS 2 are unpowered in-light"
+        ],
+        answer: "The RAT automatically extends and the emergency generator connects if AC BUS 1 and AC BUS 2 are unpowered in-flight"
+    },
+    {
+        question: "The red disk on the outside of the fuselage adjacent to the APU compartment indicates:",
+        options: [
+            "The APU fire bottle has discharged due to over pressure",
+            "The APU fire bottle has not been discharged due to over pressure",
+            "The APU fire bottle requires servicing"
+        ],
+        answer: "The APU fire bottle has not been discharged due to over pressure"
+    },
+    {
+        question: "The crew should expect the red SMOKE light on the CARGO SMOKE panel:",
+        options: [
+            "To extinguish after discharging the fire bottle",
+            "To remain illuminated even if the source of the smoke is extinguished after discharging the fire bottle",
+            "To flash indicating the source of the smoke is still present after discharging the fire bottle"
+        ],
+        answer: "To remain illuminated even if the source of the smoke is extinguished after discharging the fire bottle"
+    },
+    {
+        question: "The pilot is hand flying the aircraft in normal law and initiates a 30 degree bank. Which of the following is true?",
+        options: [
+            "Beyond 25 degrees of bank, sidestick pressure must be continuously applied to maintain the desired bank angle",
+            "If the sidestick is released at 30 degrees of bank, the aircraft will maintain 30 degrees of bank indefinitely",
+            "If the sidestick is released at 30 degrees of bank, positive piral stability returns the bank angle to 25 degrees"
+        ],
+        answer: "If the sidestick is released at 30 degrees of bank, the aircraft will maintain 30 degrees of bank indefinitely"
+    },
+    {
+        question: "Which of the following statements is NOT true about rudder control?",
+        options: [
+            "In normal law, the FACs provide turn coordination and yaw dampening without rudder pedal deflection",
+            "Mechanical control of the rudder does not require hydraulic power",
+            "The FACs provide rudder limiting based on airspeed"
+        ],
+        answer: "Mechanical control of the rudder does not require hydraulic power"
+    },
+    {
+        question: "If flaps FULL is selected with the speedbrakes extended:",
+        options: [
+            "The flaps will not extend until the speedbrakes are fully retracted",
+            "The speedbrakes will automatically retract",
+            "The flaps will extend and the speedbrakes remain extended. There will be an ECAM warning message"
+        ],
+        answer: "The speedbrakes will automatically retract"
+    },
+    {
+        question: "If the outer tank fuel transfer valves open in-flight, they are commanded closed:",
+        options: [
+            "By pushing the TRANSFER pb",
+            "Automatically during the refueling process",
+            "lutomatically in-flight when all outer tank fuel has"
+        ],
+        answer: "Automatically during the refueling process transferred"
+    },
+    {
+        question: "If a GREEN ENG 1 PUMP failure occurs:",
+        options: [
+            "The PTU transfers YELLOW system fluid to operate the GREEN system",
+            "The PTU automatically pressurizes the GREEN system without transferring any fluid",
+            "The PTU transfers BLUE system fluid to operate the GREEN system"
+        ],
+        answer: "The PTU automatically pressurizes the GREEN system without transferring any fluid"
+    },
+    {
+        question: "Which of the following best describes the YELLOW hydraulic system after pushing the ENG 2 FIRE pb?",
+        options: [
+            "ENG 2 PUMP deactivated and ENG 2 The PTU transfers GREEN system fluid to operate the YELLOW system",
+            "ENG 2 PUMP deactivated and ENG 2 FIRE valve closed.The PTU operates the YELLOW system",
+            "NG 2 PUMP deactivated and ENG 2 FIRE valve closed. he PTU does not operate the YELLOW system"
+        ],
+        answer: "ENG 2 PUMP deactivated and ENG 2 FIRE valve closed.The PTU operates the YELLOW system"
+    },
+    {
+        question: "In addition to inhibiting the PTU between engine starts; it is also inhibited during what?",
+        options: [
+            "Engine failure",
+            "Cargo door operation",
+            "YELLOW ELEC PUMP pb selected to ON"
+        ],
+        answer: "Cargo door operation"
+    },
+    {
+        question: "When is the BLUE hydraulic system pressurized with the BLUE ELEC PUMP in AUTO?",
+        options: [
+            "After selecting the BLUE ELECP PUMP to ON after engine",
+            "Automatically, after the first engine start",
+            "Automatically, after both engines are started"
+        ],
+        answer: "Automatically, after the first engine start"
+    },
+    {
+        question: "If electrical power supply to the engine anti-ice valve fails, the engine anti-ice valve:",
+        options: [
+            "Closes",
+            "Opens",
+            "Remains in its current position"
+        ],
+        answer: "Opens"
+    },
+
 ];
