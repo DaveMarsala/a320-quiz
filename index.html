@@ -35,7 +35,7 @@
             flex-direction: column;
             gap: 15px;
         }
-        input[type="number"] {
+        input[type="number"], input[type="text"] {
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
@@ -64,6 +64,12 @@
         .button-secondary:hover {
             background-color: #95a5a6;
         }
+        .button-warning {
+            background-color: #e67e22;
+        }
+        .button-warning:hover {
+            background-color: #d35400;
+        }
         .question-block {
             margin-bottom: 20px;
             padding-bottom: 15px;
@@ -86,31 +92,30 @@
             background: #eef2f5;
         }
         
-        /* Base styling for results text */
         .result-text {
             font-size: 24px;
             font-weight: bold;
             text-align: center;
             margin: 10px 0 20px 0;
         }
-
-        /* Color modifiers applied by JavaScript */
-        .result-passed {
-            color: #27ae60; /* Green */
-        }
-
-        .result-failed {
-            color: #e74c3c; /* Red */
-        }
+        .result-passed { color: #27ae60; }
+        .result-failed { color: #e74c3c; }
         
-        /* NEW STYLES FOR REVIEW SECTION */
-        .review-block {
+        /* STYLES FOR REVIEW SECTION */
+        .review-block, .search-result-block {
             background: #fff3f3;
             border-left: 5px solid #e74c3c;
             padding: 15px;
             margin-bottom: 15px;
             border-radius: 5px;
             text-align: left;
+        }
+        .search-result-block {
+            background: #fdfefe;
+            border-left: 5px solid #3498db;
+            border-right: 1px solid #eee;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
         }
         .wrong-answer {
             color: #c0392b;
@@ -128,16 +133,38 @@
             margin-top: 8px;
             font-size: 15px;
         }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+        #search-results {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .search-options-list {
+            margin: 10px 0;
+            padding-left: 20px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div id="setup-section" class="setup-section">
-        <h1>A320 Knowledge Test</h1>
+        <h1>Aviation Knowledge Test</h1>
+        
         <label for="num-questions">How many questions would you like to answer?</label>
         <input type="number" id="num-questions" min="1" value="10">
         <button onclick="startQuiz()">Start Quiz</button>
+
+        <hr>
+
+        <h2>Search Question Bank</h2>
+        <input type="text" id="search-bar" onkeyup="searchQuestions()" placeholder="Type a word or phrase to search...">
+        <div id="search-results"></div>
     </div>
 
     <div id="quiz-section" class="quiz-section hidden">
@@ -152,8 +179,9 @@
         
         <div id="review-section"></div>
         
+        <button id="retest-wrong-btn" onclick="retestWrong()" class="button-warning hidden">Retest Incorrect Questions</button>
         <button onclick="rerunQuiz()">Rerun Same Questions</button>
-        <button onclick="location.reload()" class="button-secondary">Take Another Random Test</button>
+        <button onclick="location.reload()" class="button-secondary">Back to Menu / New Test</button>
     </div>
 </div>
 
@@ -161,10 +189,11 @@
 
 <script>
     let currentQuestions = [];
+    let wrongQuestions = []; // Array to store questions answered incorrectly
 
     function startQuiz() {
         if (typeof questionBank === 'undefined') {
-            alert("🚨 Error: 'questions.js' could not be loaded!\n\nPossible reasons:\n1. The file 'questions.js' is not in the exact same folder as 'index.html'.\n2. The file is secretly named 'questions.js.txt'.\n3. You opened the file inside a ZIP folder without extracting it first.");
+            alert("🚨 Error: 'questions.js' could not be loaded!");
             return;
         }
 
@@ -187,17 +216,28 @@
     }
 
     function rerunQuiz() {
-        // Hide result section, show quiz section again
         document.getElementById('result-section').classList.add('hidden');
         document.getElementById('quiz-section').classList.remove('hidden');
+        renderQuiz();
+    }
 
-        // Render the exact same currentQuestions array without shuffling it
+    // NEW FUNCTION: Retest only the wrong answers
+    function retestWrong() {
+        // Set the current questions to ONLY the ones they got wrong
+        currentQuestions = [...wrongQuestions];
+        
+        document.getElementById('result-section').classList.add('hidden');
+        document.getElementById('quiz-section').classList.remove('hidden');
+        
         renderQuiz();
     }
 
     function renderQuiz() {
         const container = document.getElementById('quiz-container');
         container.innerHTML = '';
+        
+        // Scroll to top of the page when rendering a new quiz
+        window.scrollTo(0, 0);
 
         currentQuestions.forEach((q, index) => {
             const questionDiv = document.createElement('div');
@@ -231,6 +271,9 @@
         const reviewContainer = document.getElementById('review-section');
         reviewContainer.innerHTML = ''; 
         let hasMistakes = false;
+        
+        // Reset wrong questions array for this attempt
+        wrongQuestions = [];
 
         currentQuestions.forEach((q, index) => {
             const selectedOption = document.querySelector(`input[name="question_${index}"]:checked`);
@@ -240,6 +283,7 @@
                 score++;
             } else {
                 hasMistakes = true;
+                wrongQuestions.push(q); // Save this specific question to retest later
                 
                 const reviewDiv = document.createElement('div');
                 reviewDiv.className = 'review-block';
@@ -263,11 +307,17 @@
 
         document.getElementById('quiz-section').classList.add('hidden');
         document.getElementById('result-section').classList.remove('hidden');
+        window.scrollTo(0, 0);
 
+        // Show or Hide the "Retest Wrong" button
+        const retestBtn = document.getElementById('retest-wrong-btn');
         if (hasMistakes) {
             const reviewHeader = document.createElement('h3');
             reviewHeader.innerText = "Questions to Review:";
             reviewContainer.insertBefore(reviewHeader, reviewContainer.firstChild);
+            retestBtn.classList.remove('hidden'); // Show the button
+        } else {
+            retestBtn.classList.add('hidden'); // Hide the button if they got 100%
         }
 
         const resultText = document.getElementById('result-text');
@@ -277,6 +327,58 @@
             resultText.className = 'result-text result-failed';
         } else {
             resultText.className = 'result-text result-passed';
+        }
+    }
+
+    // ==========================================
+    // SEARCH FUNCTIONS
+    // ==========================================
+    function searchQuestions() {
+        if (typeof questionBank === 'undefined') return;
+        
+        const query = document.getElementById('search-bar').value.toLowerCase();
+        const resultsContainer = document.getElementById('search-results');
+        resultsContainer.innerHTML = '';
+
+        // If search is empty or too short, clear results
+        if (query.trim().length < 2) return;
+
+        // Filter question bank for the string/substring
+        const filtered = questionBank.filter(q => q.question.toLowerCase().includes(query));
+
+        if (filtered.length === 0) {
+            resultsContainer.innerHTML = '<p style="text-align:center; color:#7f8c8d;">No questions found matching your search.</p>';
+            return;
+        }
+
+        filtered.forEach((q, index) => {
+            const qDiv = document.createElement('div');
+            qDiv.className = 'search-result-block';
+            
+            let html = `<div class="question-text">${q.question}</div>`;
+            
+            // Show options
+            html += `<ul class="search-options-list">`;
+            q.options.forEach(opt => html += `<li>${opt}</li>`);
+            html += `</ul>`;
+            
+            // Toggle answer button
+            html += `<button onclick="toggleSearchAnswer('search-ans-${index}')" class="button-secondary" style="padding: 6px; font-size: 14px; width: auto; margin-top: 5px;">Toggle Answer</button>`;
+            
+            // Hidden correct answer
+            html += `<br><div id="search-ans-${index}" class="hidden correct-answer">${q.answer}</div>`;
+
+            qDiv.innerHTML = html;
+            resultsContainer.appendChild(qDiv);
+        });
+    }
+
+    function toggleSearchAnswer(elementId) {
+        const answerDiv = document.getElementById(elementId);
+        if (answerDiv.classList.contains('hidden')) {
+            answerDiv.classList.remove('hidden');
+        } else {
+            answerDiv.classList.add('hidden');
         }
     }
 </script>
