@@ -1051,9 +1051,9 @@ const questionBank = [
         options: [
             "By pushing the TRANSFER pb",
             "Automatically during the refueling process",
-            "lutomatically in-flight when all outer tank fuel has"
+            "automatically in-flight when all outer tank fuel has"
         ],
-        answer: "Automatically during the refueling process transferred"
+        answer: "Automatically during the refueling process"
     },
     {
         question: "If a GREEN ENG 1 PUMP failure occurs:",
