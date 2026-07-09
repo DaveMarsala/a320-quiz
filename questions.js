@@ -1100,5 +1100,537 @@ const questionBank = [
         ],
         answer: "Opens"
     },
-
+    {
+        question: "Which hydraulic system does the alternate braking system use",
+        options: [
+            "GREEN",
+            "YELLOW",
+            "BLUE"
+        ],
+        answer: "YELLOW"
+    },
+    {
+        question: "The crew performs a landing with autobrakes selected to MED. What triggers the application of the autobrakes?",
+        options: [
+            "The application of the brake pedals by the pilot",
+            "The signal to extend the spoilers",
+            "Reverse thrust is selected"
+        ],
+        answer: "The signal to extend the spoilers"
+    },
+    {
+        question: "When illuminated, the overhead emergency lights and EXIT signs are powered by either the bus or what other power source?",
+        options: [
+            "AC BUS 1",
+            "Internal batteries",
+            "BAT BUS"
+        ],
+        answer: "Internal batteries"
+    },
+    {
+        question: "A fast alignment occurs by selecting the rotary MODE selector from NAV to OFF and back to NAV within how many seconds?",
+        options: [
+            "Ten",
+            "Five",
+            "Three"
+        ],
+        answer: "Five"
+    },
+    {
+        question: "ADIRU # 2 normally supplies ADR and IR information for which displays?",
+        options: [
+            "Captain's PFD and ND",
+            "First officer's PFD and ND",
+            "Captain's PFD and first officer's ND"
+        ],
+        answer: "First officer's PFD and ND"
+    },
+    {
+        question: "At the gate, if the ADIRUs are powered by the aircraft batteries, all of the following occur except?",
+        options: [
+            "The ON BAT light on the ADIRS panel illuminates",
+            "ECAM ADIRS ON BAT fault message is generated",
+            "The external horn is activated"
+        ],
+        answer: "ECAM ADIRS ON BAT fault message is generated"
+    },
+    {
+        question: "In the AUTO position, the XBLEED (crossbleed) valve will:",
+        options: [
+            "Open when the APU bleed valve opens",
+            "Normally be open",
+            "Open if a leak is detected"
+        ],
+        answer: "Open when the APU bleed valve opens"
+    },
+    {
+        question: "The wings contain what type of bleed leak detection?",
+        options: [
+            "Single loop",
+            "Dual loop",
+            "Triple lindy"
+        ],
+        answer: "Dual loop"
+    },
+    {
+        question: "During an automatic start in-flight, FADEC provides all of the following except:",
+        options: [
+            "Abnormal start indications",
+            "Abort authority",
+            "N1 and N2 limits protection"
+        ],
+        answer: "Abort authority"
+    },
+    {
+        question: "If performing a manual engine start (overhead ENG MAN START pb ON):",
+        options: [
+            "FADEC opens the start valve and provides ignition and tue flow 30 seconds after the ENG MASTER switch is selected ON",
+            "Ignition and fuel flow occur when the respective ENG MASTER switch is selected ON",
+            "FADEC only opens and closes the start valve"
+        ],
+        answer: "Ignition and fuel flow occur when the respective ENG MASTER switch is selected ON"
+    },
+    {
+        question: "In the event of an engine flame-out:",
+        options: [
+            "Continuous ignition is only activated by selecting the ENG MODE selector to IGN/START",
+            "FADEC automatically provides continuous ignition on both engines",
+            "Continuous ignition is unavailable"
+        ],
+        answer: "FADEC automatically provides continuous ignition on both engines"
+    },
+    {
+        question: "During an automatic start of engine 1, the crew notices only igniter B is powered. Is this normal?",
+        options: [
+            "No. Contact maintenance and advise igniter A is inoperative",
+            "Yes. FADEC alternates igniters for automatic engine starts",
+            "Yes. FADEC only uses igniter B to start engine 1"
+        ],
+        answer: "Yes. FADEC alternates igniters for automatic engine starts"
+    },
+    {
+        question: "Which of the following is true?",
+        options: [
+            "Each engine shares oil with its respective IDG",
+            "Each IDG has its own oil supply which is cooled by fuel",
+            "Each IDG has its own oil supply which is cooled by ambient air"
+        ],
+        answer: "Each IDG has its own oil supply which is cooled by fuel"
+    },
+    {
+        question: "Once activated, how can you cancel the EVAC alert from the cockpit?",
+        options: [
+            "HORN SHUT OFF.",
+            "COMMAND switchs.",
+            "Only able to deactivate from cabin.",
+            "OFF switch."
+        ],
+        answer: "COMMAND switchs."
+    },
+    {
+        question: "When the door arming lever is in the ARMED position, opening the door from the outside will:",
+        options: [
+            "The power assist will rapidly open the door.",
+            "Automatically deploy and inflate the evacuation slide.",
+            "Only arm the slide.",
+            "Disarm the door."
+        ],
+        answer: "Disarm the door."
+    },
+    {
+        question: "The message OUTER TK FUEL XFRD appears in the MEMO. What does this mean?",
+        options: [
+            "It is a reminder to show that a transfer valve is open.",
+            "Fuel is transferring from the center tank to the inner tank.",
+            "It is a reminder to open the outer tank transfer valve.",
+            "Fuel is transferring from the inner tank to the outer tank."
+        ],
+        answer: "It is a reminder to show that a transfer valve is open."
+    },
+    {
+        question: "From which tanks will fuel gravity feed?",
+        options: [
+            "Outer cell of the wing tanks, inner cell of the wing tanks, and/or center tank.",
+            "Inner cell of the wing tanks, and center tank.",
+            "Outer cell of the wing tanks, and inner cell of the wing tank",
+            "The center tank only."
+        ],
+        answer: "Outer cell of the wing tanks, and inner cell of the wing tank"
+    },
+    {
+        question: "Which hydraulic systems) supply pressure to the landing gear system?",
+        options: [
+            "Green",
+            "Blue",
+            "Yellow and Blue",
+            "Green and blue."
+        ],
+        answer: "Green"
+    },
+    {
+        question: "What does pushing the APPR push button do?",
+        options: [
+            "Arms the Flight Guidance system to capture a localiser and glide slope",
+            "Arms managed navigation.",
+            "Allows the aircraft to slow to green dot speed.",
+            "Arms managed vertical navigation."
+        ],
+        answer: "Arms the Flight Guidance system to capture a localiser and glide slope"
+    },
+    {
+        question: "The weather radar image can be displayed on which modes of the ND?",
+        options: [
+            "All modes except Plan.",
+            "Rose VOR or Rose ILS.",
+            "Rose NAV or ARC.",
+            "Rose NAV or VOR."
+        ],
+        answer: "All modes except Plan."
+    },
+    {
+        question: "On board the A320 aircraft, there are ... identical ADIRUs and ... GPS receivers",
+        options: [
+            "2, 2",
+            "3, 2",
+            "3, 3",
+            "3, 1"
+        ],
+        answer: "3, 2"
+    },
+    {
+        question: "The amber ON BAT light illuminates on the ADIRS panel:",
+        options: [
+            "When the aircraft battery supplies at least one IRS.",
+            "Fast alignment is in progress.",
+            "Both other answers are correct."
+        ],
+        answer: "When the aircraft battery supplies at least one IRS."
+    },
+    {
+        question: "Which is NOT a basic mode of GPWS?",
+        options: [
+            "Excessive rate of descent.",
+            "Excessive terrain closure rate.",
+            "Altitude loss after takeoff, or go-around.",
+            "Deviation above the glideslope."
+        ],
+        answer: "Deviation above the glideslope."
+    },
+    {
+        question: "At approximately what cabin altitude should the passenger oxygen masks drop?",
+        options: [
+            "12,500 feet",
+            "15,000 feet",
+            "10,000 feet",
+            "14,000 feet"
+        ],
+        answer: "14,000 feet"
+    },
+    {
+        question: "Approximately how long are the passenger oxygen generators able to produce oxygen?",
+        options: [
+            "15 minutes",
+            "30 minutes",
+            "20 minutes",
+            "25 minutes"
+        ],
+        answer: "25 minutes"
+    },
+    {
+        question: "The APU may be started up to what altitude?",
+        options: [
+            "The APU can be started at any altitude provided normal aircraft electrical power is available.",
+            "The APU can be started up to 35,000 feet using only the aircraft batteries.",
+            "The APU can be started up to 30,000 feet using only the aircraft batteries.",
+            "Both A and B are correct."
+        ],
+        answer: "The APU can be started at any altitude provided normal aircraft electrical power is available."
+    },
+    {
+        question: "What happens to the cockpit door with electrical power failure?",
+        options: [
+            "It operates normally on HOT BAT bus.",
+            "It automatically locks.",
+            "It automatically unlocks.",
+            "None of the above."
+        ],
+        answer: "It automatically unlocks."
+    },
+    {
+        question: "What does illumination of the white SLIDE ARMED light represent on the main cabin door?",
+        options: [
+            "This indicates that the slide has properly inflated and is safe for use.",
+            "This indicates that the slide is armed and the slide will inflate if the door is opened from inside the aircraft.",
+            "This indicates that the main cabin door has not been properly closed.",
+            "This indicates that the main cabin door has not been roperly closed but the slide is properly armed."
+        ],
+        answer: "This indicates that the slide is armed and the slide will inflate if the door is opened from inside the aircraft."
+    },
+    {
+        question: "How is it determined that the cockpit sliding window is closed and locked?",
+        options: [
+            "The red ring below the release button should not be in view.",
+            "The locking pin was placed in the forward position when the window was closed.",
+            "The red ring below the release button should be in view"
+        ],
+        answer: "The red ring below the release button should be in view"
+    },
+    {
+        question: "During a manual start, how is the start valve opened?",
+        options: [
+            "It is automatic once the ENG MASTER is placed to the ON position",
+            "By depressing the ENG MAN START pushbutton on the overhead panel.",
+            "By depressing the ENG MAN START pushbutton on the overhead panel while the ENG MODE selector is out of the NORM position."
+        ],
+        answer: "By depressing the ENG MAN START pushbutton on the overhead panel while the ENG MODE selector is out of the NORM position."
+    },
+    {
+        question: "If the lower ECAM DU fails, is there a way to retrieve that information?",
+        options: [
+            "By pressing and holding the related systems page push button on the ECAM control panel, the page will be displayed on the UPPER ECAM.",
+            "By rotating the ECAM/ND XFR switch on the switching panel, the lower ECAM page will be transferred to either the Captain or FO's ND.",
+            "Both A and B are WRONG.",
+            "Both A and B are correct."
+        ],
+        answer: "Both A and B are correct."
+    },
+    {
+        question: "After a single DMC failure, how could a crew member recover the display units?",
+        options: [
+            "Rotate the EIS DMC switch on the switching panel to replace the failed DC with DC #3.",
+            "Once a DMC has failed, the information is unrecoverable.",
+            "It is done automatically.",
+            "None of the above."
+        ],
+        answer: "Rotate the EIS DMC switch on the switching panel to replace the failed DC with DC #3."
+    },
+    {
+        question: "During descent, the cabin pressure rate is controlled in a way that:",
+        options: [
+            "The cabin is slightly pressurized at landing",
+            "The cabin descends at 1000 feet per minute",
+            "The aircraft is fully depressurized prior to landing"
+        ],
+        answer: "The cabin is slightly pressurized at landing"
+    },
+    {
+        question: "The mixing unit is connected to:",
+        options: [
+            "Packs, cabin air, emergency ram air inlet and LP ground Connector",
+            "Packs, emergency ram air inlet and LP ground connector",
+            "Packs and cabin air"
+        ],
+        answer: "Packs, cabin air, emergency ram air inlet and LP ground Connector"
+    },
+    {
+        question: "Which statement is true?",
+        options: [
+            "Black circuit breakers are monitored by the ECAM",
+            "Green circuit breakers are monitored by the ECAM",
+            "Red circuit breakers are monitored by the ECAM"
+        ],
+        answer: "Green circuit breakers are monitored by the ECAM"
+    },
+    {
+        question: "The presence of FAULT lights on both PACK pbs during preflight without an ECAM fault message most likely indicates what?",
+        options: [
+            "No bleed air available",
+            "Pack overheat",
+            "The pack pbs are selected to OFF"
+        ],
+        answer: "No bleed air available"
+    },
+    {
+        question: "Prior to engine start, the EXT PWR pb indicates AVAIL and the APU START pb indicates AVAIL, what source is powering the aircraft?",
+        options: [
+            "The APU",
+            "External power",
+            "The aircraft electrical systems are not powered"
+        ],
+        answer: "The APU"
+    },
+    {
+        question: "Cockpit voice recorder is energized on GND as soon as ACT electrical network is supplied but only for 5 minutes. It starts again as soon as:",
+        options: [
+            "GND CTL is on",
+            "One engine is running",
+            "A and B"
+        ],
+        answer: "A and B"
+    },
+    {
+        question: "In normal law, what is the maximum bank angle obtainable with the sidestick fully deflected?",
+        options: [
+            "33 degrees",
+            "67 degrees",
+            "There is no bank limitation in normal law"
+        ],
+        answer: "67 degrees"
+    },
+    {
+        question: "If an engine fire detection loop fails (ECAM displays ENG 1 FIRE LOOP A FAULT):",
+        options: [
+            "Fire detection for that engine is unavailable",
+            "The other loop can provide fire detection",
+            "The pilot must select the other loop (loop B)"
+        ],
+        answer: "The other loop can provide fire detection"
+    },
+    {
+        question: "Performing a manual ILS approach (AP Off, FD and ATHR On), the thrust reduction for landing:",
+        options: [
+            "Is manually performed.",
+            "Is always automatic.",
+            "Is automatic with A/THR On."
+        ],
+        answer: "Is manually performed."
+    },
+    {
+        question: "If RMP # 2 is set to tune a navaid (i.e., the NAV pb is selected on and the green light is illuminated), which FMGC(s) lose auto tuning capability?",
+        options: [
+            "FMGC # 2",
+            "FMGC # 1",
+            "Both FMGCs"
+        ],
+        answer: "Both FMGCs"
+    },
+    {
+        question: "The normal FMGC operation is:",
+        options: [
+            "Only one FMGC can operate at a time",
+            "FMGC 1 has priority, FMGC 2 is in STBY",
+            "FMC's operate according to master/slave principle",
+            "MC's operate independently"
+        ],
+        answer: "FMC's operate according to master/slave principle"
+    },
+    {
+        question: "The FMGC functions are:",
+        options: [
+            "Flight guidance and flight envelope protection",
+            "Flight management and flight envelope protection",
+            "Flight management and flight guidance",
+            "Flight envelope protection and yaw axis control"
+        ],
+        answer: "Flight management and flight guidance"
+    },
+    {
+        question: "RAM air inlet, when set to ON will open:",
+        options: [
+            "In any case",
+            "Provided ditching is not selected",
+            "Provided delta P < 1 PSI and ditching not selected"
+        ],
+        answer: "Provided delta P < 1 PSI and ditching not selected"
+    },
+    {
+        question: "In NORMAL LAW, the SIDESTICK commands a LOAD FACTOR demanIn what situation does the SIDESTICK command an ANGLE OF ATTACK demand?",
+        options: [
+            "At bank angle > 33°.",
+            "After the Stall Warning has activated.",
+            "When the ANGLE OF ATTACK protection activates."
+        ],
+        answer: "When the ANGLE OF ATTACK protection activates."
+    },
+    {
+        question: "The trim function of the FAC is:",
+        options: [
+            "A pitch trim",
+            "A rudder trim",
+            "An aileron trim",
+            "A pitch trim and a rudder trim"
+        ],
+        answer: "A rudder trim"
+    },
+    {
+        question: "For ACFT position determination, FMGC uses data from:",
+        options: [
+            "3 ADIRS",
+            "DME, VOR, ILS, GPS",
+            "Both A & B"
+        ],
+        answer: "Both A & B"
+    },
+    {
+        question: "To activate the voice recorder before engine start you have to press:",
+        options: [
+            "The \"CVR ERASE\" p/b",
+            "The \"GND CTL\" p/b",
+            "The \"CVR TEST\" p/b"
+        ],
+        answer: "The \"GND CTL\" p/b"
+    },
+    {
+        question: "In case of a CPC 1 failure in flight:",
+        options: [
+            "Manual control has to be used",
+            "The system transfers automatically to controller 2",
+            "Controller 2 must be manually selected",
+            "Landing elevation must be set on the landing elevation knob"
+        ],
+        answer: "The system transfers automatically to controller 2"
+    },
+    {
+        question: "Standby nav has been selected by the use of nav keys:",
+        options: [
+            "VHF function is lost on this RMP",
+            "VHF is still available but only the last frequency selected can be used",
+            "Nav key has no effect on radio com freq selection"
+        ],
+        answer: "Nav key has no effect on radio com freq selection"
+    },
+    {
+        question: "When the \"ditching\" switch is selected ON, a closure sugnal is sent to:",
+        options: [
+            "The outflow valve and pack flow control valves",
+            "The ram air inlet and ventilation inlet and extract valves",
+            "All asnwers are correct"
+        ],
+        answer: "All asnwers are correct"
+    },
+    {
+        question: "The APU fire protection system is different from the engine fire protection system in that:",
+        options: [
+            "The APU uses a carbon dioxide fire bottle",
+            "The APU is protected by only one fire bottle",
+            "The APU fire can only be manually discharged"
+        ],
+        answer: "The APU is protected by only one fire bottle"
+    },
+    {
+        question: "The zone temperature selectors on AIR COND panel perform what function?",
+        options: [
+            "Modulate the trim air valves",
+            "Signal temperature demands to the AC controllers",
+            "Modulate the pack bypass valves"
+        ],
+        answer: "Modulate the trim air valves"
+    },
+    {
+        question: "In the event of and engine fire, the respective ENG FIRE pb and RNG panel FIRE light iluminate red until:",
+        options: [
+            "The respective ENG FIRE pb is pushed and released",
+            "The fire is out",
+            "The respective ENG MASTER switch is selected OFF"
+        ],
+        answer: "The fire is out"
+    },
+    {
+        question: "If and IDG pb is pushed in response to an abnormal condition",
+        options: [
+            "The pilot may push it again to reconnect the IDG",
+            "The pilot is merely backing up the auto disconnect feature of the IDG",
+            "The IDG can only be reconnected by maintanance"
+        ],
+        answer: "The IDG can only be reconnected by maintanance"
+    },
+    {
+        question: "By accident, you hold the SIDESTICK deflected for too long, and are alredy at 45 degrees bank. You realise your mistake, and release the SIDESTICK. What happens next?",
+        options: [
+            "The aircraft maintains 45 degrees of bank",
+            "The aircraft reduces the bank angle to 33 degrees",
+            "The aircraft reduces thebank angle to 0 degrees"
+        ],
+        answer: "The aircraft reduces the bank angle to 33 degrees"
+    }
 ];
