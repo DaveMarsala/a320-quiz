@@ -1633,4 +1633,5 @@ const questionBank = [
         ],
         answer: "The aircraft reduces the bank angle to 33 degrees"
     }
+    
 ];
