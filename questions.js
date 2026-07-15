@@ -810,7 +810,7 @@ const questionBank = [
             "Anti-icing capability for all leading edge devices of each wing",
             "Anti-icing capability for all leading edge and trailing edge"
         ],
-        answer: "Anti-icing capability for only the outboard leading edge devices of each wing devices of each wing"
+        answer: "Anti-icing capability for only the outboard leading edge devices of each wing"
     },
     {
         question: "Which hydraulic system does the Landing Gear Control and Interface Unit (LGIU) use to extend and retract the landing gear?",
