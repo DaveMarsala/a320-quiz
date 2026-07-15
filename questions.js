@@ -145,15 +145,6 @@ const questionBank = [
         answer: "Load Factor."
     },
     {
-        question: "If selected ON, which exterior lights automatically extinguish with the landing gear retracted?",
-        options: [
-            "Nose lights (taxi and takeoff)",
-            "Landing lights",
-            "Wing lights"
-        ],
-        answer: "Nose lights (taxi and takeoff)"
-    },
-    {
         question: "The mixing unit is connected to:",
         options: [
             "Packs, cabin air, emergency ram air inlet and LP ground Connector",
@@ -1334,7 +1325,7 @@ const questionBank = [
             "20 minutes",
             "25 minutes"
         ],
-        answer: "25 minutes"
+        answer: "15 minutes"
     },
     {
         question: "The APU may be started up to what altitude?",
